@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CountDownApp.SettingsPage">
+	
+	
+	<StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+		<Label Text="Settings"
+               FontSize="36"
+               HorizontalOptions="Center" />
+
+		<Button x:Name="themeButton"
+                Text="Change Theme"
+                FontSize="20"
+                Margin="20"
+                Style="{DynamicResource ButtonStyle}"
+                Clicked="onThemeClicked" />
+
+		<Button x:Name="clearData"
+                Text="Clear Data"
+                FontSize="20"
+                Margin="20"
+                Style="{DynamicResource ButtonStyle}"
+                Clicked="onClearDataClicked" />
+
+		<Button x:Name="homeButton"
+                Text="Home"
+                FontSize="20"
+                Margin="20"
+                Style="{DynamicResource ButtonStyle}"
+                Clicked="onHomeClicked" />
+
+		
+	</StackLayout>
+</ContentPage>

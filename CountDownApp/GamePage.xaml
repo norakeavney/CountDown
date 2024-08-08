@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CountDownApp.GamePage"
+             BackgroundColor="#f0f0f0">
+
+    <!-- Main Content Layout -->
+    <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="20"
+                 Padding="10">
+
+        <!-- Header -->
+        <Label Text="Countdown Game"
+               FontSize="24"
+               HorizontalOptions="Center"
+               TextColor="#212121" />
+
+        <!-- Grid for Rounds and Points-->
+        <Grid x:Name="labelGrid" HorizontalOptions="Center" VerticalOptions="Start"
+              RowSpacing="5" ColumnSpacing="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Label x:Name="roundLabel"
+                   Text="Round: 1"
+                   FontSize="18"
+                   HorizontalOptions="Center"
+                   TextColor="#757575"
+                   Grid.Column="0" />
+
+            <Label x:Name="playerOnePointsLabel"
+                   Text="Player One Points: 0"
+                   FontSize="18"
+                   HorizontalOptions="Center"
+                   TextColor="#757575"
+                   Grid.Column="1" />
+
+            <Label x:Name="playerTwoPointsLabel"
+                   Text="Player Two Points: 0"
+                   FontSize="18"
+                   HorizontalOptions="Center"
+                   TextColor="#757575"
+                   Grid.Column="2" />
+        </Grid>
+
+        <!-- Timer Label -->
+        <Label x:Name="timerLabel"
+               Text="Timer: 00:00:30"
+               FontSize="18"
+               HorizontalOptions="Center"
+               TextColor="#757575" />
+
+        <!-- 9x1 Grid for Letters -->
+        <Grid x:Name="letterGrid" HorizontalOptions="Center" VerticalOptions="Start"
+              RowSpacing="5" ColumnSpacing="10" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <!-- Entry elements will be added dynamically -->
+        </Grid>
+
+        <!-- Vowel and Consonant Buttons Grid aligned with the wordGrid -->
+        <Grid HorizontalOptions="Center" VerticalOptions="Start" Margin="10" RowSpacing="5" ColumnSpacing="10"
+              WidthRequest="{OnPlatform Default=900, Android=300}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button x:Name="vowButton"
+                    Text="Vowel"
+                    FontSize="16"
+                    BackgroundColor="#6200ee"
+                    TextColor="White"
+                    CornerRadius="10"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center"
+                    WidthRequest="{OnPlatform Default=150, Android=120}"
+                    Clicked="OnVowClicked"
+                    Grid.Column="0" />
+            <Button x:Name="conButton"
+                    Text="Consonant"
+                    FontSize="16"
+                    BackgroundColor="#6200ee"
+                    TextColor="White"
+                    CornerRadius="10"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Center"
+                    WidthRequest="{OnPlatform Default=150, Android=120}"
+                    Clicked="OnConClicked"
+                    Grid.Column="1" />
+        </Grid>
+
+        <!-- Start Game Button -->
+        <Button x:Name="startGameButton"
+                Text="Start Game"
+                FontSize="16"
+                BackgroundColor="#6200ee"
+                TextColor="White"
+                CornerRadius="10"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                WidthRequest="{OnPlatform Default=150, Android=150}"
+                Clicked="OnStartGameClicked" />
+    </StackLayout>
+</ContentPage>
